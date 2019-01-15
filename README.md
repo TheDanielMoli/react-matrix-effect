@@ -22,7 +22,7 @@ npm install --save react-matrix-effect
 
 Then, import it in your React app:
 
-```
+```javascript
 import Matrix from 'react-matrix-effect';
 ```
 
