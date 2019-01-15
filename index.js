@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Sound extends React.Component {
+export default class Matrix extends React.Component {
     static propTypes = {
         width: PropTypes.number,
         height: PropTypes.number,
