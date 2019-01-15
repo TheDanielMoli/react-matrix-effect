@@ -1,0 +1,23 @@
+{
+  "name": "react-matrix-effect",
+  "version": "1.0.0",
+  "description": "A React component displaying a Matrix movie-like effect with a lot of options.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "matrix",
+    "movie",
+    "effect",
+    "animation",
+    "component"
+  ],
+  "author": "Daniele Molinari",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0"
+  }
+}
