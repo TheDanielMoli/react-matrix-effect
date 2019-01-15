@@ -1,6 +1,6 @@
 {
   "name": "react-matrix-effect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React component displaying a Matrix movie-like effect with a lot of options.",
   "main": "index.js",
   "scripts": {
