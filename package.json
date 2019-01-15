@@ -16,6 +16,10 @@
   ],
   "author": "Daniele Molinari",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sadkit/react-matrix-effect.git"
+  },
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.7.0"
