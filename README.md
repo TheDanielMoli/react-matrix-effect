@@ -3,6 +3,11 @@
 [npm-image]: https://img.shields.io/npm/v/react-matrix-effect.svg
 [npm-url]: https://www.npmjs.com/package/react-matrix-effect
 
+
+<p align="center">
+  <img src="https://www.sadkit.com/assets/img/react-matrix-effect.jpg" alt="Matrix Effect Screenshot" width="640px" height="480px" />
+</p>
+
 react-matrix-effect provides a Matrix React component for a movie-like animation. In order to use the component, you will have to install it first with npm:
 
 ## Installation
