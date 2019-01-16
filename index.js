@@ -11,7 +11,9 @@ export default class Matrix extends React.Component {
         interval: PropTypes.number,
         color: PropTypes.string,
         frequency: PropTypes.number,
-        speed: PropTypes.number
+        speed: PropTypes.number,
+        style: PropTypes.object,
+        zIndex: PropTypes.number
     };
 
     static defaultProps = {
@@ -49,7 +51,7 @@ export default class Matrix extends React.Component {
             canvas.width = width;
             canvas.height = height;
 
-            let numberOfColumns = Math.floor(width / size );
+            let numberOfColumns = Math.floor(width / size * 3 );
 
             this.setState({canvas, columns, context, size, source, numberOfColumns}, () => {
 
@@ -68,23 +70,29 @@ export default class Matrix extends React.Component {
     }
 
     draw() {
-        this.state.context.fillStyle = 'rgba(0,0,0,0.05)';
-        this.state.context.fillRect(0, 0, this.state.canvas.width, this.state.canvas.width);
-        this.state.context.fillStyle = this.props.color;
-        this.state.context.font = '700 ' + this.props.fontSize + 'px Consolas,monaco,monospace';
+        let context = this.state.context;
+        let columns = this.state.columns;
+        let numberOfColumns = this.state.numberOfColumns;
 
-        for (let columnIndex = 0; columnIndex < this.state.numberOfColumns; columnIndex++) {
+        context.fillStyle = 'rgba(0,0,0,0.05)';
+        context.fillRect(0, 0, this.state.canvas.width, this.state.canvas.width);
+        context.fillStyle = this.props.color;
+        context.font = '700 ' + this.props.fontSize + 'px Consolas,monaco,monospace';
+
+        for (let columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
             let index = Math.floor(Math.random() * this.state.source.length);
             let character = this.state.source[index];
             let positionX = columnIndex * this.state.size;
-            let positionY = this.state.columns[columnIndex] * this.state.size;
+            let positionY = columns[columnIndex] * this.state.size;
 
-            this.state.context.fillText(character, positionX, positionY);
-            if (positionY >=this.state.canvas.height && Math.random() > 1 - this.props.frequency) {
-                this.state.columns[columnIndex] = 0;
+            context.fillText(character, positionX, positionY);
+            if (positionY >= this.state.canvas.height && Math.random() > 1 - this.props.frequency) {
+                columns[columnIndex] = 0;
             }
-            this.state.columns[columnIndex]++;
+            columns[columnIndex]++;
         }
+
+        this.setState({ context, columns })
     };
 
     updateDimensions() {
@@ -94,8 +102,9 @@ export default class Matrix extends React.Component {
     }
 
     render() {
+        let style = this.props.style ? this.props.style : {};
         return (
-            <div style={{background: '#000000', width: this.props.fullscreen ? '100vw' : this.props.width + 'px', height:  this.props.fullscreen ? '100vh' : this.props.height + 'px', overflow: 'hidden'}}>
+            <div style={{...style, background: '#000000', width: this.props.fullscreen ? '100vw' : this.props.width + 'px', height:  this.props.fullscreen ? '100vh' : this.props.height + 'px', overflow: 'hidden', zIndex: this.props.zIndex}}>
                 <canvas ref='canvas'/>
             </div>
         );

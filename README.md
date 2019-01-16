@@ -12,7 +12,7 @@
 
 ## Installation
 
-In order to use the component, you will have to install it first with npm:
+In order to use the component, you will have to install it first via npm:
 
 ```
 npm install --save react-matrix-effect 
@@ -43,6 +43,8 @@ You may also pass some options to the component:
 * ***color*** (*string*, hex font color)
 * ***frequency*** (*number*, float describing frequency of the characters)
 * ***speed*** (*number*)
+* ***zIndex*** (*number*)
+* ***style*** (*object*, passed to the wrapping div)
 
 
 ## Examples
