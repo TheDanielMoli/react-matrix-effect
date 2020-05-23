@@ -45,7 +45,7 @@ export default class Matrix extends React.Component {
             let context = this.state.canvas.getContext('2d');
             let size = this.props.colSize;
             let source = '0 0 1 1';
-            let width = this.props.fullscreen ? window.innerWidth : this.props.width;
+            let width = this.props.fullscreen ? window.innerWidth : this.props.heigth;
             let height = this.props.fullscreen ? window.innerHeight : this.props.height;
             let canvas = this.state.canvas;
             canvas.width = width;
@@ -75,7 +75,7 @@ export default class Matrix extends React.Component {
         let numberOfColumns = this.state.numberOfColumns;
 
         context.fillStyle = 'rgba(0,0,0,0.05)';
-        context.fillRect(0, 0, this.state.canvas.width, this.state.canvas.width);
+        context.fillRect(0, 0, this.state.canvas.width, this.state.canvas.height);
         context.fillStyle = this.props.color;
         context.font = '700 ' + this.props.fontSize + 'px Consolas,monaco,monospace';
 
