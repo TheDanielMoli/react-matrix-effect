@@ -45,7 +45,7 @@ export default class Matrix extends React.Component {
             let context = this.state.canvas.getContext('2d');
             let size = this.props.colSize;
             let source = '0 0 1 1';
-            let width = this.props.fullscreen ? window.innerWidth : this.props.heigth;
+            let width = this.props.fullscreen ? window.innerWidth : this.props.width;
             let height = this.props.fullscreen ? window.innerHeight : this.props.height;
             let canvas = this.state.canvas;
             canvas.width = width;
